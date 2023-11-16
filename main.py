@@ -1,6 +1,6 @@
 https://learn.microsoft.com/en-gb/training/modules/analyze-text-ai-language/2-provision-resource
 
-
+Day 85 - 16.11.2023
 Azure AI Language provides an API for (CTA) Common Text Analysis techniques that can be easil integrated.
 
 - Detect language from text
