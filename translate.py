@@ -1,3 +1,5 @@
+#Day 86 - 17.11.2023
+
 import requests, uuid, json
 
 # Add your key and endpoint
