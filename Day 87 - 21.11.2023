@@ -8,4 +8,23 @@ https://learn.microsoft.com/en-gb/credentials/applied-skills/migrate-sql-workloa
 1) Azure SQL Migration Extension (ASME)
 2) Azure Database Migration Assistant (ADMA)
 
+Choosing the best migration option to meet business requirements for meeting:
+1) Downtime
+2) Handling Migration State
+3) Monitoring Database Migration
+
+- Post Migration Tasks
+1) Disaster Recovery
+2) Monitoring for Azure SQL Database
+
+Essential for ensuring a smooth and efficient transition to Azure SQL Database, and maintaining its operation post-migration.
+
+
+Pre-requisities 
+
+- Experience with SQL Server databases
+- Knowledge of SQL Server editions and verions
+- Basic knowledge of seuciryt concepts like identities and permissions
+- Experience using the Azure Potal to Create Resources and set permissions
+
 
