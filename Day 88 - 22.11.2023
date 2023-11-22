@@ -2,11 +2,13 @@ https://learn.microsoft.com/en-gb/training/modules/assess-sql-server-databases-f
 
 Before migrating, it is important to assess to:
 
-1) identify (any compatabilitiy issues or potential blockers) that may prevent a successful migration.
+--------------------------------------------------------
+1) Identify (any compatabilitiy issues or potential blockers) that may prevent a successful migration.
 
 Steps
 Any issues/breaks that may require post-migration fixes.
 
+--------------------------------------------------------
 2) Learn various (tools and options) available for assessing and migrating SQL server databases to Azure SQL.
 
 Steps
@@ -20,10 +22,23 @@ Example
 - LinkedServer rule - is one of the rules in the assessment guidelines for migrating your SQL server DB to Azure SQL 
 (This rule checks for the prescence of linked servers, which aren't supported in Azure SQL database)
 
-
-
-
+By reviewing this rule, you can identify any linked server dependencies and plan for alternative approaches or modifications in your 
+application to ensure a successful transition to Azure SQL database.
+--------------------------------------------------------
 3) Use Azure Migration extension on (Azure Data Studio) to assess SQL Server databases
+
+https://learn.microsoft.com/en-us/azure/azure-sql/migration-guides/database/sql-server-to-sql-database-assessment-rules?view=azuresql
+https://learn.microsoft.com/en-us/training/paths/migrate-sql-workloads-azure/?source=recommendations
+https://learn.microsoft.com/en-us/azure/azure-sql/migration-guides/managed-instance/sql-server-to-managed-instance-guide?view=azuresql&source=recommendations
+https://learn.microsoft.com/en-us/azure/dms/tutorial-sql-server-to-managed-instance?source=recommendations
+https://learn.microsoft.com/en-us/azure/dms/tutorial-sql-server-managed-instance-online?source=recommendations*
+
+Select Source
+Select Target
+Select Databases
+Configure Migration Settings
+Summary
+
 4) Use (Azure Migrate) to assess SQL server databases
 5) Use (Data Migration Assistant) DMA to assess SQL server databases.
 
