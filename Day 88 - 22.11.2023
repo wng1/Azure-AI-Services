@@ -13,6 +13,16 @@ Steps
 There are migration tools that can help identify issues/breaking changes, behaviour changes, deprecated features. These can be used to
 check against a migration target, as it allows you to quickly assess a database to see the impact of migrating without any initial setup or licensing cost.
 
+- Understand the assessment rules used in the migration process is important
+- Why? It allows you to (identify and address potential issues or challenges before migrating) your SQL server database to Azure SQL database.
+
+Example
+- LinkedServer rule - is one of the rules in the assessment guidelines for migrating your SQL server DB to Azure SQL 
+(This rule checks for the prescence of linked servers, which aren't supported in Azure SQL database)
+
+
+
+
 3) Use Azure Migration extension on (Azure Data Studio) to assess SQL Server databases
 4) Use (Azure Migrate) to assess SQL server databases
 5) Use (Data Migration Assistant) DMA to assess SQL server databases.
