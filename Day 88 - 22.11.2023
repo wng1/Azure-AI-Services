@@ -1,0 +1,13 @@
+https://learn.microsoft.com/en-gb/training/modules/assess-sql-server-databases-for-migration-to-azure-sql/1-introduction
+
+Before migrating, it is important to assess to:
+
+1) identify any compatabilitiy issues or potential blockers that may prevent a successful migration.
+2) Learn various tools and options available for assessing and migrating SQL server databases to Azure SQL.
+
+
+Companies like to standardize and modernise their data estate but they don't know how much administrative and development effort it requires.
+
+Therefore the main responsiblity of a Senior Data Administrator is to identify what is needed and ultimately migrate several SQL server databases from 
+on-premises servers to Azure with as minimum disruption as possible.
+
