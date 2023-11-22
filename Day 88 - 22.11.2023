@@ -4,6 +4,9 @@ Before migrating, it is important to assess to:
 
 1) identify (any compatabilitiy issues or potential blockers) that may prevent a successful migration.
 2) Learn various (tools and options) available for assessing and migrating SQL server databases to Azure SQL.
+3) Use Azure Migration extension on (Azure Data Studio) to assess SQL Server databases
+4) Use (Azure Migrate) to assess SQL server databases
+5) Use (Data Migration Assistant) DMA to assess SQL server databases.
 
 
 Companies like to standardize and modernise their data estate but they don't know how much administrative and development effort it requires.
