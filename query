@@ -1,0 +1,16 @@
+SELECT
+  p.EnglishProductName,
+  COUNT(od.OrderQuantity) AS TotalOrders,
+  SUM(od.OrderQuantity) AS TotalUnitsSold,
+  SUM(od.OrderQuantity * od.UnitPrice) AS TotalSales
+FROM
+  dbo.FactResellerSales od
+INNER JOIN
+  dbo.DimProduct p
+ON
+  od.ProductKey = p.ProductKey
+GROUP BY
+  p.EnglishProductName
+ORDER BY
+  p.EnglishProductName;
+
