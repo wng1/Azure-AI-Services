@@ -1,0 +1,25 @@
+#Docker File
+
+FROM python:3.12
+
+WORKDIR /test-directory
+
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
+COPY ./localfolderpath ./dockerfolderpath
+
+CMD ["python", "./dockerfolderpath/main.py"]
+
+
+
+
+#Once completed, run these commands in the Terminal. 
+
+#pip freeze > requirements.txt
+#docker build -t localfolderpath .
+#docker run localfolderpath
+
+
+
