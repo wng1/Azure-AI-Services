@@ -20,6 +20,7 @@ CMD ["python", "./dockerfolderpath/main.py"]
 #pip freeze > requirements.txt
 #docker build -t localfolderpath .
 #docker run localfolderpath
+#docker run -p 8000:8000 localfolderpath (i.e. pythonfastapi)
 
 
 
