@@ -1,0 +1,49 @@
+Docker and Container
+----------------------------------------------------------
+
+load_csv(filepath):
+		df = spark.read.option("header", True).csv(filepath)
+
+Declare csv if no header
+val df = spark.read.csv(".../...csv")
+	df.printSchema()
+
+Declare csv if there is a header
+		df = spark.read.option("header", True)
+		.csv(filepath)
+
+
+Read multiple csv files into spark
+val df = spark.read.csv(path1, path2, path3)
+Read all csv files in a directory
+val df = spark.read.csv(folder path)
+
+CSV with delimiter
+val df2 = spark.read.options(Map("delimiter"->"!,"))
+	.csv(filepath))
+
+------------------------------------------------------------------------
+Spark uses the DataFrameWriter object to write spark dataframe to a csv file.
+
+Write Spark DataFrame to CSV File
+	df2.write.option("header", "true")
+	.csv("filepath")
+	
+	df2.write.options("header", true)
+	.csv("filepath)
+
+df2.write.mode(SaveMode.Overwrite/Ignore/Append).csv("filepath)
+
+
+--------------------------------------------
+def load_csv(filepath):
+	try: 
+		df = spark.read.options(header="True")
+		.csv("filepath")
+	except Exception as e:
+		raise IOError(f"Could not load the {filepath}")
+	else:
+		logging.info("CSV Successfully Loaded")
+		return df
+
+	
