@@ -1,0 +1,10 @@
+SELECT *
+FROM 
+  OPENROWSET(
+      BULK  'https://filepathofcsv',
+      FORMAT = 'CSV',
+      HEADER_ROW = TRUE,
+      PARSER_VERSION='2.0'
+      )  AS [result]
+
+#Azure Synpase pipline with a serverless SQL Pool
