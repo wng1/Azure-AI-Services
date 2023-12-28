@@ -1,0 +1,13 @@
+Serverless API with Azure Functions
+
+
+1) Create Resource Group
+2) Create Azure Cosmos DB
+3) Create Function App
+4) Use the same Resource Group
+5) Create new Storage Account with the Function App (Hosting)
+6) Function API will be Serverless (Consumption)
+
+7) Retrieve THe Primary Connection String from CosmosDB and Go to Function App
+8) Go to Function App > Function > Create > HTTP Trigger (GET, POST, PUT) request
+
