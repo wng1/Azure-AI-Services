@@ -1,0 +1,9 @@
+#Create a Notebook in Azure Synapse Analytics
+
+new_rows = [('John', 'Male', 100), ('Sarah', 'Female', 200)
+
+df_rows = spark.CreateDataFrame(new_rows,['Name', 'Gender', 'Salary'])
+
+df.show()
+
+
