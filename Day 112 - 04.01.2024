@@ -6,4 +6,10 @@ df = pandas.read_csv('path to the file')
 
 pandas.DataFrame({'id:[1,2], 'name':['Tom', 'John']})
 
+#put this in CSV
 df.to_csv('StorageAccountEmployeeCSV')
+
+#write to file
+storage_options={'account_key':'#################################'})
+
+
