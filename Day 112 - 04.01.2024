@@ -1,0 +1,9 @@
+import pandas
+
+#read data file
+
+df = pandas.read_csv('path to the file')
+
+pandas.DataFrame({'id:[1,2], 'name':['Tom', 'John']})
+
+df.to_csv('StorageAccountEmployeeCSV')
