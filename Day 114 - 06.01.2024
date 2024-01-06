@@ -3,5 +3,12 @@
 val scala_df = spark.read.sqlanalytics("NameOfDB.dbo.person")
 scala_df.show()
 
+---------
+val scala_df = spark.read.sqlanalytics("NameOfDB.dbo.person")
+scala_df.createOrReplaceTempView("personTemplate")
+
+%%pyspark
+display(scala_df)
+#You cannot reference data or variables directly across different languages in Synapse notebook
 
 
