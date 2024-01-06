@@ -1,0 +1,7 @@
+%%spark
+
+val scala_df = spark.read.sqlanalytics("NameOfDB.dbo.person")
+scala_df.show()
+
+
+
