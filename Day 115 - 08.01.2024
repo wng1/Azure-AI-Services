@@ -1,11 +1,31 @@
 from notebookutils import mssparkutils
 
+#Copy file from Source to Destination
+mssparkutils.fs.cp('filepath1/test.csv', 'destinationpath1/test.csv')
+
+#Move file from Source to Destination
 mssparkutils.fs.mv('filepath1/test.csv', 'destinationpath1/test.csv')
 
-
+#List the Files in the Folder
 Files = mssparkutils.fs.ls('/ListOutTheFolder/')
 print(dir(Files[0]))
 
+#Loop through the files
 for FILE in Files:
   print(FILE.name, FILE.size, FILE.isDir, FILE.isFile)
 
+#mkdirs
+mssparkutils.fs.mkdir('/data/testfolder')
+
+#put - write a file out
+mssparkutils.fs.put('/data/testfolder/dummy.csv', '1, Tom')
+
+#head
+mssparkutils.fs.put('/data/testfolder/dummy.csv')
+
+#append
+mssparkutils.fs.append('/data/testfolder/dummy.csv', '\n 2, ABC', True)
+
+
+#rm
+mssparkutils.fs.rm('/data/testfolder/dummy.csv')
