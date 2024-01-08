@@ -1,0 +1,8 @@
+from notebookutils import mssparkutils
+
+mssparkutils.fs.mv('filepath1/test.csv', 'destinationpath1/test.csv')
+
+
+Files = mssparkutils.fs.ls('/ListOutTheFolder/')
+print(dir(Files[0]))
+
