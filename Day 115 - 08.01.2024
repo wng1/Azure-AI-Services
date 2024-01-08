@@ -6,3 +6,6 @@ mssparkutils.fs.mv('filepath1/test.csv', 'destinationpath1/test.csv')
 Files = mssparkutils.fs.ls('/ListOutTheFolder/')
 print(dir(Files[0]))
 
+for FILE in Files:
+  print(FILE.name, FILE.size, FILE.isDir, FILE.isFile)
+
