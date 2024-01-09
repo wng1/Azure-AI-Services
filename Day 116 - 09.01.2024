@@ -1,0 +1,23 @@
+Data Engineers primary role responsible for:
+
+- Integrating
+- Transforming
+- And Consolidating Data
+
+from various structured and unstructured data systems into structures that are suitable for building analytics solutions.
+
+An Azure Data Engineer also helps ensure that:
+(1) data pipelines and 
+(2) data stores are: 
+
+- high-performing
+- efficient, 
+- organized, and 
+- reliable, 
+
+given a specific set of business requirements and constraints.
+
+1) Structured Data - Tables/Schemas/CSV/flat file etc
+2) Semi-Structured - JSON
+3) Unstructred data - Key-Vale pairs, PDF, documents and images
+
