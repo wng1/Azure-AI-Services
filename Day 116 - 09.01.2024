@@ -21,3 +21,24 @@ given a specific set of business requirements and constraints.
 2) Semi-Structured - JSON
 3) Unstructred data - Key-Vale pairs, PDF, documents and images
 
+========================================================================================================================================
+Data Integration - creating/establishing links between operational and analytical services and data sources to enable:
+
+- secure
+- reliable
+
+access to data across multiple systems.  For example, a business process might rely on data that is spread across multiple systems,
+and a data engineeer is required to establish links so that the required data can be extracted from all of these systems.
+
+========================================================================================================================================
+Data Transformation - Operational data usually needs to be transformed into suitable structure and format for analysis, often
+as part of an ETL, the data is used to quickly ingest the data intot he data lake, and then apply "big data" processing techniques to transform it.
+
+Regardless of the approach used, the data is prepared to support downstream analytical needs.
+========================================================================================================================================
+Data Consolidation - is a process of combining data that has been extracted from multiple data soures into a consistent strucutre - usually to support
+analytics and reporting.
+
+Commonly, data from operational systems is extracted, transformed, and loaded into analytical stores such as a data lake or data warehouse.
+
+
