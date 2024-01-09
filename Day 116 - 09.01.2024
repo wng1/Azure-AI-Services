@@ -81,3 +81,10 @@ are orgnized into a schema that optimizes performance for analytical queries.
 
 Data engineers are responsible for designing and implementing relational data warehouses, and managing regular data loads into tables.
 
+6) Apache Spark
+It is a parallel processing framework that takes advantage of in-memory processing and distrubed file storage. It is a common open source software tool for big data
+scenarios.
+
+Data Engineers needs to be proficient with Spark, using notebooks, and other code artifacts to process data in a data lake and prepare it for modelling and analysis.
+
+
