@@ -57,3 +57,27 @@ One of the core responsibilities of data engineer is to:
 that integrate operational and analytical data sources or extract operational data from multiple systems, transform it to appropriate structures
 for analytics, and load it into an analytical data store (usually referred to as ETL solutions).
 
+2) Streaming Data
+It is a perpetual sources of data that generate data values in real-time, oftening relating to specific events.
+Common sources of streaming data includes IOT devices and social media feeds.
+
+Data Engineers often need to implement solutions that capture real-time stream of data and ingest them into analytical data systems, often
+combining the real-time data with other application data that is processed in batches.
+
+3) Data Pipelines
+It is used to orchestra activities that transfer and transform data. Pipelines are the primary way in which data engineers implement repeatable extract, transform and load
+(ETL) solutions that can be triggered based on schedule or in response to events.
+
+4) Data Lakes
+It is a storage repository that holds large amount of data in native, raw formats. Data lake stores are optimized for scaling to massive volumes(terabytes or petabytes)
+of data. The data typically comes from multiple heterogenous sources, and may be structured, semi-structured or unstructured.
+
+The idea with a data lake is to store everything in it original, untransformed state. This approach differs from a traditional data warehouse, which transforms and 
+processes the data at the time of ingestion.
+
+5) Data warehouse
+It is a centralised repository of integrated data from one or more disparate sources. Data warehouses store current and historical data in relational tables that
+are orgnized into a schema that optimizes performance for analytical queries. 
+
+Data engineers are responsible for designing and implementing relational data warehouses, and managing regular data loads into tables.
+
