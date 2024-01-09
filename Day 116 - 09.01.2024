@@ -29,16 +29,31 @@ Data Integration - creating/establishing links between operational and analytica
 
 access to data across multiple systems.  For example, a business process might rely on data that is spread across multiple systems,
 and a data engineeer is required to establish links so that the required data can be extracted from all of these systems.
-
 ========================================================================================================================================
 Data Transformation - Operational data usually needs to be transformed into suitable structure and format for analysis, often
 as part of an ETL, the data is used to quickly ingest the data intot he data lake, and then apply "big data" processing techniques to transform it.
 
 Regardless of the approach used, the data is prepared to support downstream analytical needs.
+
 ========================================================================================================================================
 Data Consolidation - is a process of combining data that has been extracted from multiple data soures into a consistent strucutre - usually to support
 analytics and reporting.
 
 Commonly, data from operational systems is extracted, transformed, and loaded into analytical stores such as a data lake or data warehouse.
 
+========================================================================================================================================
+
+
+1) Operational and Analytical Data
+Operational Data is usually transactional data that is generated and stored by applications, often in a relational or non-relational database.
+Analytical data is data that has been optimized for analysis and reporting, often in a data warehouse.
+
+One of the core responsibilities of data engineer is to:
+
+- Design
+- Implement
+- Manage Solutions
+
+that integrate operational and analytical data sources or extract operational data from multiple systems, transform it to appropriate structures
+for analytics, and load it into an analytical data store (usually referred to as ETL solutions).
 
