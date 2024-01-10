@@ -1,0 +1,106 @@
+Azure Synpase Analytics includes:
+- serverless SQL pool, which is tailored for querying data in a data lake. 
+With a serverless SQL pool you can use SQL code to query data in files of various common formats. 
+This helps without the need to create or maintain a relational database store.
+
+
+The importance is to:
+- Identify capabilities and use cases for serverless SQL pools in Azure Synapase Analytics.
+- Query CSV, JSON and Parquet files using a serverless SQL pool
+- Create external database objects in a serverless SQL pool
+
+Pre-requisities
+- Familar with Azure Portal
+- Familiar with Data Lake and Data Warehouse concepts
+- Experience of using SQL to query database tables
+
+Using serverless SQL pool is to query data without the need to worry about ingesting the data into the system. You just point the query to the data that is already in the lake and run it.
+
+Data exploration involves the browsing the data to get initial insight about the data, and is easily achievable with Azure Synapse Studio. 
+
+Logical Data warehouse - After initial exploration of the data in the data lake, you can define external objects such as tables and views in a serverless SQL database. The data remains stored in the data lake files, but are abstracted by a relational schema that can be used by client applications and analytical tools to query the data as they would in a relational database hosted in SQL server.
+
+Example 1: 
+SELECT TOP 100 *
+FROM OPENROWSET(
+    BULK 'https://mydatalake.blob.core.windows.net/data/files/*.csv',
+    FORMAT = 'csv',
+    PARSER_VERSION = '2.0',
+    HEADER_ROW = TRUE) AS rows
+
+Example 2:
+SELECT TOP 100 *
+FROM OPENROWSET(
+    BULK 'https://mydatalake.blob.core.windows.net/data/files/*.csv',
+    FORMAT = 'csv',
+    PARSER_VERSION = '2.0',
+    FIRSTROW = 2) AS rows
+
+Example 3:  (without headers and create headers)
+SELECT TOP 100 *
+FROM OPENROWSET(
+    BULK 'https://mydatalake.blob.core.windows.net/data/files/*.csv',
+    FORMAT = 'csv',
+    PARSER_VERSION = '2.0')
+WITH (
+    product_id INT,
+    product_name VARCHAR(20) COLLATE Latin1_General_100_BIN2_UTF8,
+    list_price DECIMAL(5,2)
+) AS rows
+
+Querying JSON Example 1
+SELECT doc
+FROM
+    OPENROWSET(
+        BULK 'https://mydatalake.blob.core.windows.net/data/files/*.json',
+        FORMAT = 'csv',
+        FIELDTERMINATOR ='0x0b',
+        FIELDQUOTE = '0x0b',
+        ROWTERMINATOR = '0x0b'
+    ) WITH (doc NVARCHAR(MAX)) as rows
+
+Querying JSON Example 2
+SELECT JSON_VALUE(doc, '$.product_name') AS product,
+           JSON_VALUE(doc, '$.list_price') AS price
+FROM
+    OPENROWSET(
+        BULK 'https://mydatalake.blob.core.windows.net/data/files/*.json',
+        FORMAT = 'csv',
+        FIELDTERMINATOR ='0x0b',
+        FIELDQUOTE = '0x0b',
+        ROWTERMINATOR = '0x0b'
+    ) WITH (doc NVARCHAR(MAX)) as rows
+
+Querying Parquet
+SELECT TOP 100 *
+FROM OPENROWSET(
+    BULK 'https://mydatalake.blob.core.windows.net/data/files/*.*',
+    FORMAT = 'parquet') AS rows
+
+Querying Partitioned Data
+SELECT *
+FROM OPENROWSET(
+    BULK 'https://mydatalake.blob.core.windows.net/data/orders/year=*/month=*/*.*',
+    FORMAT = 'parquet') AS orders
+WHERE orders.filepath(1) = '2020'
+    AND orders.filepath(2) IN ('1','2');
+
+
+Create External Database
+CREATE DATABASE SalesDB
+    COLLATE Latin1_General_100_BIN2_UTF8
+
+Create External Data Source files
+CREATE EXTERNAL DATA SOURCE files
+WITH (
+    LOCATION = 'https://mydatalake.blob.core.windows.net/data/files/'
+)
+
+SELECT *
+FROM
+    OPENROWSET(
+        BULK 'orders/*.csv',
+        DATA_SOURCE = 'files',
+        FORMAT = 'csv',
+        PARSER_VERSION = '2.0'
+    ) AS orders
