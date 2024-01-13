@@ -11,3 +11,12 @@ fig = plt.figure(figsize(12,8))
 
 plt.bar(x=data['Category'], height=data['ProductCount'], color='orange')
 
+plt.title("Product Counts by Category")
+plt.xlabel("Category")
+plt.ylabel("Products")
+plt.grid(color="#FFFFFF", linestyle='--', linewith=2, axis='y', alpha=0.7)
+plt.xticks(rotation=70)
+
+plt.show()
+
+
