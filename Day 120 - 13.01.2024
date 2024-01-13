@@ -1,0 +1,13 @@
+from matplotlib import pyplot as plt
+
+data = spark.sql("SELECT Category, COUNT(ProductID) As ProductCount \
+                  FROM products \
+                  GROUP BY Category \
+                  ORDER BY Category").toPandas()
+
+plt.clf()
+
+fig = plt.figure(figsize(12,8))
+
+plt.bar(x=data['Category'], height=data['ProductCount'], color='orange')
+
