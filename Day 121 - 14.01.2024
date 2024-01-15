@@ -1,0 +1,14 @@
+Pipeline can be created via graphical user interface and also can be done via JSON.
+
+https://learn.microsoft.com/en-us/training/modules/build-data-pipeline-azure-synapse-analytics/3-create-pipeline-azure-synapse-studio
+
+Sources - The input data to be transferred.
+Transformations - Various operations that you can apply to data as it streams through the data flow.
+Sinks - Target in which the data will be loaded.
+
+Running a pipeline can happen when:
+
+1) Immediately
+2) At explicitly scheduled intervals
+3) In response to an event, such as new data files being added to a folder in a data lake.
+
