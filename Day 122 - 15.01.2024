@@ -1,0 +1,5 @@
+#Create and Enable Azure Synapse Link
+
+az cosmosdb create
+az cosmosdb update --name my-cosmos-db --resource-group my-rg --enable-analytical-storage true
+
