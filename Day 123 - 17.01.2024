@@ -13,3 +13,13 @@ display(df.limit(10))
 
 product_df = df.select("productID", "productName").orderBy("productName")
 display(products_df.limit(10))
+
+
+#Writing a dataframe to a cosmos db container
+
+mydf.write.format("cosmos.oltp")\
+    .option("spark.synapse.linkedService", "my_linked_service")\
+    .option("spark.cosmos.container", "my-container")\
+    .mode("append")\
+    .save()
+
