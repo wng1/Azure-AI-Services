@@ -1,0 +1,15 @@
+Loading data from Azure Cosmos DB into dataframe
+
+https://learn.microsoft.com/en-us/training/modules/configure-azure-synapse-link-with-azure-cosmos-db/5-query-with-spark
+
+
+df = spark.read
+    .format("cosmos.olap")\
+    .option("spark.synapse.linkedService", "my_linked_service")\
+    .option("spark.cosmos.container", "my-container")\
+    .load()
+
+display(df.limit(10))
+
+product_df = df.select("productID", "productName").orderBy("productName")
+display(products_df.limit(10))
