@@ -1,0 +1,17 @@
+Microsoft Power BI is used to create:
+
+1) dynamic
+2) interactive data visualisations
+
+that reveals insight on which important business decisions are based. 
+
+Access to timely data can be the difference between failure and success, so the ability to capture and visualise data in real-time, or as near as possible,
+is critical in many scenarios.
+
+Azure Stream Analytics provides a way to process a stream of real-time data from an input such as:
+
+1) Azure Event Hubs
+
+and direct the results to an output. And one possible output is a Power BI dataset, from which
+dashboards can consume data for real-time visualization.
+
