@@ -1,0 +1,13 @@
+SELECT 
+  DateAdd(second, -60, System.TimeStamp) AS StartTime,
+  System.TimeStamp AS EndTime,
+  SensorID,
+  MAX(ReadingValue) AS MaxReading
+INTO
+  [powerbi-output]
+FROM
+  [eventhub-input] TIMESTAMP BY EventEnqueuedUtcTime
+WHERE SensorID <> 0
+GROUP BY SensorID, TumblingWindow(second, 60)
+HAVING COUNT(*) > 1
+
