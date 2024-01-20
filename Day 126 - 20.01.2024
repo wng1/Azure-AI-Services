@@ -11,3 +11,8 @@ WHERE SensorID <> 0
 GROUP BY SensorID, TumblingWindow(second, 60)
 HAVING COUNT(*) > 1
 
+#Retrieve the values from the eventhub and filter out those with sensor of value 0, and group these events by SensorID in 60-second windows.
+#Keep only windows with more than on event.
+
+#Store the selected information, window start time, window end time, sensor ID, maximum reading value in a powerBI output table.
+
