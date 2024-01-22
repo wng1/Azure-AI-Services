@@ -1,0 +1,8 @@
+Data Analytics solutions often include a requirement to ingest and process streams of data.
+
+Stream processing differs from batch processing in that streams are generally boundless - in other words,
+they are continuous sources of data that must be processed perpetually rather than at fixed intervals.
+
+Azure Stream Analytics provides a cloud service that you can use to define a query that operates on a stream
+of data from a streamiong source, such as Azure Event Hubs or an Azure IoT Hub.
+
