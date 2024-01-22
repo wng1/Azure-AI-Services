@@ -14,3 +14,20 @@ for real-time visualisation.
 data before sending it to Power Bi, where you will visualize the data in a report.
 
 
+Stream Analytics workspace
+Stream Analytics job
+Input into the Stream Analytics (Event Data Stream) so Azure Event Hub
+Output to Power BI workspace
+
+Create a query to summarize the event stream
+SELECT
+	DataAdd(second, -5, System.TimeStamp) AS StartTime,
+	System.TimeStamp AS EndTime,
+	ProductID,
+	SUM(Quantity) AS Orders
+INTO
+	[powerbi-dataset]
+FROM
+  [orders] TIMESTAMP BY EventEnqueuedUtcTime
+GROUP BY ProductID, TumblingWindow(second, 5)
+HAVING COUNT(*) > 1
