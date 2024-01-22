@@ -6,3 +6,11 @@ they are continuous sources of data that must be processed perpetually rather th
 Azure Stream Analytics provides a cloud service that you can use to define a query that operates on a stream
 of data from a streamiong source, such as Azure Event Hubs or an Azure IoT Hub.
 
+You can use an Azure Stream Analytics query to process a stream of data and send the results directly to Power BI
+for real-time visualisation.
+
+1) Use Azure Streams Analytics to process a stream of sales order data
+2) Order data will be sent from Azure Event Hubs, from where your Azure Stream Analytics job will read and summarize the 
+data before sending it to Power Bi, where you will visualize the data in a report.
+
+
