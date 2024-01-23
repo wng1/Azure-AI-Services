@@ -6,3 +6,12 @@ enterprise-grade data applications.
 Built by a joint effort by Microsoft and the team that started Apache Spark, Azure Databricks provides data science,
 engineering and analytical teams with a single platform for big data processing and machine learning.
 
+#Azure Delta Lake
+
+Creating a Delta Lake table from a dataframe
+
+df = spark.read.load('/data/mydata.csv', format='csv', header=True)
+delta_table_path = "/deltaFolder/mydata"
+df.write.format("delta").save(delta_table_path)
+
+
