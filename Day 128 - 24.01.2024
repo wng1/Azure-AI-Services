@@ -1,0 +1,14 @@
+from delta.tables import *
+from pyspark.sql.functions import *
+
+deltaTable = DeltaTable.forPath(spark, delta_table_path)
+
+deltaTable.update(
+  condition = "Category == 'Accessories'",
+  set = { "Price": "Price * 0.9"})
+
+df = spark.read.format("delta").option("versionAsOf", 0).load(delta_table_path)
+df = spark.read.format("delta").option("timestampAsOf", '2023-01-01').load(delta_table_path)
+
+
+
