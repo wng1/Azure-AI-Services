@@ -11,4 +11,5 @@ df = spark.read.format("delta").option("versionAsOf", 0).load(delta_table_path)
 df = spark.read.format("delta").option("timestampAsOf", '2023-01-01').load(delta_table_path)
 
 
-
+df.write.format("delta").saveAsTable("myTable")
+df.write.format("delta").option("path", "/mydata").saveAsTable("myExternalTable")
