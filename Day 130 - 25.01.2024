@@ -1,0 +1,36 @@
+YOu can use a Delta Lake as a source or sink for Spark Structured Streaming.
+
+Example: Capture a stream of real-time data from an IoT device and write the stream directly to a Delta Lake table as a sink - enabling you to 
+query the table to see the latest streamed data.
+
+Or 
+
+You could read a Delta Table as a streaming source, enabling you to constantly report new data as it is added to the table.
+
+
+from pyspark.sql.types import *
+from pyspark.sql.function import *
+
+stream_df = spark.readStream.format("delta") \
+  .option("ignoreChanges", "true") \
+  .load("/delta/internetorders")
+
+stream_df.show()
+
+----------------------------------------------------------------------
+from pyspark.sql.types import *
+from pyspark.sql.functions import *
+
+#Create a stream that reads JSON data from a folder
+streamFolder = '/streamingdata/'
+jsonSchema = StructType([
+  StructField("device", StringType(), False),
+  StructField("status", StringType(), False)
+])
+
+stream_df = spark.readStream.schema(jsonSchema).option("maxFilesPerTrigger", 1).json(inputPath)
+
+#Write the stream to a delta table
+table_path = '/delta/devicetable'
+checkpoint_path = '/delta/checkpoint'
+delta_stream = stream_df.writeStream.format("delta").option("checkpointLocation", checkpoint_path).start(table_path)
