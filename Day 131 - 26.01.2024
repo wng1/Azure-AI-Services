@@ -1,0 +1,37 @@
+# 1) Load the data into the dataframe
+
+df = spark.read.load('/deltaFolder/data.csv', format='csv', header=True)
+display(df.limit(10))
+
+# 2) Now that the data is loaded into the dataframe, we now want to persist this into a Delta table by using the following:
+
+delta_table_path = "/delta/Folder/delta_table"
+df.write.format("delta").save(delta_table_path)
+
+# 3) You can run a unit test to create an Delta Table object and perform an update to the data in the table by using the following:
+
+from delta.tables import *
+from pyspark.sql.functions import *
+
+deltaTable = DeltaTable.forpath(Spark, delta_table_path)
+
+deltaTable.update(
+  condition = "Name = John",
+  set { "Message": "This is a test" })
+
+deltaTable.toDF().show(10)
+
+# 4) View data in the dataframe 
+
+new_df = spark.read.format("delta").load(delta_table_path)
+new_df.show(10)
+
+# 5) View history of previous versions
+
+new_df = spark.read.format("delta").option("versionAsOf", 0).load(delta_table_path)
+new_df.show(10)
+
+
+# 6) View history of the last 10 changes 
+
+deltaTable.history(10).show(10, False, True)
