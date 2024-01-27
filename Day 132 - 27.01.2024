@@ -1,3 +1,5 @@
 # create a catalog table based on the streaming sink
 spark.sql("CREATE TABLE TableA USING DELTA LOCATION '{0}'".format(delta_stream_table_path))
 
+deltastream.stop()
+
