@@ -1,0 +1,36 @@
+AZ Databricks enables engineers to use code in notebook to:
+
+1) Ingest
+2) Process
+
+Notebook can be used interactively and you can use it to encapsulate activities in data ingestion
+OR processing pipelines that is orchestracted in the ADF.
+
+#Linked Service for AZ Databricks,
+
+To run AZ Databrick workspace, the ADF pipeline must connect to the workspace, which requires authentication. To connect this,
+you will need:
+
+1) Access Token for your AZ DB workspace
+2) Creating this linked service connection in your ADF that uses the access token to connect to the desired AZ DB workspace
+
+For configuration settings you need to consider these:
+
+- Name
+- Description
+- Integration Runtime
+- Azure Subscription
+- Databricks Workspace
+- Cluster
+- Authentication Type
+- Cluster Configuration
+
+To use Databricks in ADF, you can select from the Databricks menu, add an pipeline activity and there are certain parameters to consider such as:
+
+- Notebook
+
+General - Name, Description, Timeout, Retries, Retry interval, Secure input and output
+AZ Databricks, AZ Databrick Linked Service
+Settings - Notebook path, Base parameters, Append Libraries
+User Properties - Custom user-defined properties
+
