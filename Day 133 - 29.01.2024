@@ -34,3 +34,25 @@ AZ Databricks, AZ Databrick Linked Service
 Settings - Notebook path, Base parameters, Append Libraries
 User Properties - Custom user-defined properties
 
+#Parameters
+
+You can use parameters to pass variable values to a notebook from the pipeline. 
+This allows more flexibility than using hard-coded vlaues in the notebook code.
+
+IMPORTANT:
+
+To use parameters, you need to add the library into your notebook code
+
+- CREATE & ASSIGN
+- dbutils.widgets.text("folder", "data")
+
+- GET
+folder - dbutils.widgets.get("folder")
+
+- PASSING VALUES OUT INTO ANOTHER NOTEBOOK AS INPUT
+path "dbfs:/{0}/data.csv".format(folder)
+dbutils.notebook.exit(path)
+
+
+
+
