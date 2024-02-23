@@ -1,0 +1,27 @@
+PIVOT AND UNPIVOT
+
+SQL windowing operations allow you:
+to define a subset of rows from a result set and apply functions against those rows.
+--------------------------------------------------------------------------------------------------------------------------
+Window functions allow you to perform operations such as assign a rank order to a row or divide a result set into different parts.
+OVER
+RANK
+AGGREGRATE
+OFFSET
+Windowing functions allows you to RANK, AGGREGRATE, OFFSET, OVER
+Windowing requires a set of rows to work on. The OVER clause is used to define the window you want to work on. You can then use a window function on the subset of rows you have defined.
+Windows also provide an efficient way to compare values in oen row with values in another without needing to join a table to itself.
+
+Windows and Window functions provide functionality that is difficult to replicate with other SQL commands.
+https://learn.microsoft.com/en-us/training/modules/write-queries-that-use-window-functions/3-use-over-clause
+
+OVER clause can use:
+PARTITION BY, ORDER BY, ROWS/RANGE
+
+Aggregate functions (SUM, AVG, COUNT)
+Ranking functions (RANK, ROW_NUMBER, NTILE)
+Analytic functions (CUME_DIST, PERCENTILE_CONT, PERCENTILE_DISC)
+Offset functions (LAG, LEAD, LAST_VALUE)
+
+
+
