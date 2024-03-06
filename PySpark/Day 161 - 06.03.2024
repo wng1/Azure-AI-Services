@@ -1,0 +1,50 @@
+#To be implemented in Synapse workspace, notebook. Libraries not
+#found outside.
+
+from notebookutils import mssparkutils
+mssparkutils.fs.help()
+
+#Synapse > Storage > Container > Parent Folder > Sub Folders > Files (CSV) 
+
+#List files
+#Microsoft Spark File System (mssparkutils.fs)
+mssparkutils.fs.ls('data')
+
+#View File Properties
+files = mssparkutils.fs.ls('Your directory path')
+for file in files:
+    print(file.name, file.isDir, file.isFile, file.path, file.size)
+
+#Create New Directory
+mssparkutils.fs.mkdirs('New Directory name')
+
+#Copy file
+mssparkutils.fs.cp('Source File or Directory', 'Destination File or Directory', True)
+
+#Preview File Content
+mssparkutils.fs.head('File Path',maxBytes_to_read)
+
+#Move File
+mssparkutils.fs.mv('Source File or Directory', 'Destination File or Directory', True)
+
+#Write File
+mssparkutils.fs.put('File Path', 'Content you want to write to file', True)
+
+#Append to File
+mssparkutils.fs.append('File Path', 'Content to append to file', True)
+
+#Delete file or Directory
+mssparkutils.fs.rm('File Path', True)
+
+#List out the Files.commands
+print(dir(Files[0]))
+
+#List out the notebook commands
+mssparkutils.notebook.help()
+
+from notebookutils import mssparkutils
+
+mssparkutils.env.help()
+
+df.spark.load('@_____.dfs.core.windows.net/parentfolder/filename.csv', format='csv', header=True)
+display(df)
