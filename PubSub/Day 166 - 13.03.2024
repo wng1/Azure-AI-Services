@@ -1,0 +1,101 @@
+Transformation
+
+import logging
+import json
+from azure.functions import Function, EventHub
+
+class FileNotification:
+	def __init__(self, bucket, name):
+		self.bucket = bucket
+		self.name = name
+
+def main(event: EventHub.EventData):
+	logging.info("Python EventHub trigger processed an event")
+	
+ json_load(functionalities
+	try:
+		event_body = json_loads(event.get_body().decode('utf-8'))
+		eventType = event_body.get('eventType')
+
+		if eventType == 'OBJECT_FINALIZE':
+			file_notification = FileNotification(
+				event_body['bucket'],
+				event_body['name']
+			)
+			output = f'gs//{file_notification.bucket}/{file.notification-name}"
+			return output
+
+	except Exception as e:
+		logging.error("Error in transforming pubsub to filename, exc_info=True)
+
+
+Storage
+
+import os
+import azure.functions as func
+from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
+
+
+def main(myblob: func.InputStream):
+	blob_trigger = myblob.name
+	
+endpoint_string = os.environ["http://"]
+
+blob_service_client = BlobServiceClient.from_connection_string(endpoint_string)
+container_client = blob_service_client.get_container_client("container_name")
+
+blob_client = container_client.get_blob_client(blob_trigger)
+blob_data = blob_client.download_blob().readall().decode("utf-8")
+
+
+
+import logging
+import json
+import azure.functions as func
+from azure.data.tables import TableServiceClient, TableClient
+from datetime import datetime
+
+def main(msg: func.ServiceBusMessage):
+	logging.info("Python ServiceBus trigger processed message")
+
+	message_body = msg.get_body().decode("utc-8")
+
+	sensor_data = json.loads(message_body)
+	
+table_endpoint = "http://"
+table_service_connection = TableServiceClient.from_connection_string(table_endpoint)
+Table_service = TableService = table_service_connection.get_table_client("table_name")
+
+
+table_entity = {
+	"PartitionKey": sensordata["device_id],
+	"RowKey": str(datetime.now()),
+        "SensorId": sensor_data["sensor_id"],
+        "MoistureLevel": sensor_data["moisture_level"],
+        "CreatedTime": sensor_data["created_time"]
+    }
+
+try:	
+	inserted_entity = table_client.upsert_entity(entity=table_entity)
+	logging.info(f'"Entity inserted: {inserted_entity}')
+
+except Exception as e:
+	
+	logging.error(f"Error inserting entity: {e}")
+
+----------------------------------------------------------------------------------------------
+
+
+import logging
+import json
+from azure.data.tables import TableServiceClient, TableClient
+from azure.storage.blob import BlobServiceClient, BlobClient
+
+def main(req: func.HttpRequest):
+	logging.info ("Beep Boop")
+
+blob_connection_string = "https://"
+blob_service_client = BlobServiceClient.from_connection_string(blob_connection_string)
+blob_client = blob_service_client.get_blob_client(container="container name", blob="")
+
+
