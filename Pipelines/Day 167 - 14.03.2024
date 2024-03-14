@@ -1,3 +1,12 @@
-Review 
+Review + Steps
 
-Steps
+Pre-requisities for Data Pipeline
+
+1) Azure Server
+2) Azure SQL Database
+3) Azure Data Factory
+4) Azure Storage + Azure Synapse Analytics
+5) Power BI
+
+Data Source --> Fed through Ingestion from API to SQL Server/Database as Source and Sink in Storage and Synapse Analytics as Data Lake/Data Warehouse.
+
