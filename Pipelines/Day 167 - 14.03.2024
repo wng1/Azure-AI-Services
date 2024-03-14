@@ -2,11 +2,38 @@ Review + Steps
 
 Pre-requisities for Data Pipeline
 
-1) Azure Server
-2) Azure SQL Database
-3) Azure Data Factory
-4) Azure Storage + Azure Synapse Analytics
-5) Power BI
-
 Data Source --> Fed through Ingestion from API to SQL Server/Database as Source and Sink in Storage and Synapse Analytics as Data Lake/Data Warehouse.
 
+0) API -> JSON
+1) Azure Server
+2) Azure SQL Database 
+
+================================================
+CREATE TABLE [dbo].[NameOfTable]
+(
+[Name][nvarchar](255) NOT NULL,
+[Code][nvarchar](10) NOT NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+================================================
+
+3) Azure Data Factory (Pipeline - Copy Data) & Notebook     ### Filters and Transformation to the DataFrame
+
+df = spark.read.json("InputFiles")
+display(df)
+
+====================================================================
+from pyspark.sql.functions import col, to_timestamp, to_date, explode
+
+ABC = ["###","###"]
+DEF = ["###","###"]
+
+e_df = df.select(explode(col("data")).alias("data"))
+tf_df = e_df.select(
+
+====================================================================
+
+filtered_data.write.format("delta").moder("overwrite").save("Tables/Flight")
+
+4) Azure Storage + Azure Synapse Analytics
+5) Power BI
