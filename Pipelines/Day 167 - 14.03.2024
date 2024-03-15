@@ -17,7 +17,11 @@ CREATE TABLE [dbo].[NameOfTable]
 GO
 ================================================
 
-3) Azure Data Factory (Pipeline - Copy Data) & Notebook     ### Filters and Transformation to the DataFrame
+3) Azure Data Factory (Pipeline - Copy Data) & Notebook     
+
+### Pre-requisite - Connect to SQL Database, Merge the tables together into one.
+
+### Filters and Transformation to the DataFrame
 
 df = spark.read.json("InputFiles")
 display(df)
@@ -34,6 +38,8 @@ tf_df = e_df.select(
 ====================================================================
 
 filtered_data.write.format("delta").moder("overwrite").save("Tables/Flight")
+
+### Connect to Data Destination (Azure Storage/Azure Synapse Analytics)
 
 4) Azure Storage + Azure Synapse Analytics
 5) Power BI
