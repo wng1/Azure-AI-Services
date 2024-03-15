@@ -17,7 +17,12 @@ CREATE TABLE [dbo].[NameOfTable]
 GO
 ================================================
 
-3) Azure Data Factory (Pipeline - Copy Data) & Notebook     
+3) Azure Data Factory (Pipeline - Copy Data) & Notebook - REST Connection Type to the Source
+
+#####################
+https://api.______________.com/test?access_key = ACCESS_KEY
+
+#####################
 
 ### Pre-requisite - Connect to SQL Database, Merge the tables together into one.
 
