@@ -1,0 +1,43 @@
+Steps 
+------------------------------------------------------------------------------------------------------------
+Setup Data Source
+------------------------------------------------------------------------------------------------------------
+1. Create a new resource group
+2. Create a storage account. Enable Hierarchial namespace to create Azure Data Lake Storage
+3. Create a new container
+4. Create two folders - 1) raw-data  2) transformed-data
+------------------------------------------------------------------------------------------------------------
+Setup Data Ingestion
+Setup Raw Data Source
+Setup Transformed Data Source
+
+5. Create a data factory
+6. Identify your source (example: Github - 5 CSV files)
+7. Create Linked Service - HTTP - Base URL:  Github source link
+8. Create Linked Service - Azure Data Lake Storage Gen 2
+
+9. Create Source Dataset - HTTP
+10. Create Destination Dataset - ADLS 
+
+11. Create Pipeline - Copy Data (Ingestion)  - ADF activity
+12. Configure Pipeline (Source)
+13. Configure Pipeline (Sink)
+
+14. Debug the Pipeline - Check the pipeline works
+15. Deposit the files in the raw-data folder to proceed further
+------------------------------------------------------------------------------------------------------------
+Setup Transformation
+
+16. Create Databricks Workspace
+17. Create Cluster 
+18. Create Notebook
+19. Create Code to get "raw-data" and transform it so it is put into ADLA "transformed-data" destination
+20. Create connection for Databricks and ADLS so it can easily access the data - See Step 21
+
+21. Go to App Registration
+22. Click on New Registration
+23. Save the ClientID, Tenant ID details
+24. Go to Certificate & Secrets
+25. Save the Secret ID/Key & Value
+
+
