@@ -39,5 +39,19 @@ Setup Transformation
 23. Save the ClientID, Tenant ID details
 24. Go to Certificate & Secrets
 25. Save the Secret ID/Key & Value
+26. Add Config Code
+------------------------------------------------------------------------------------------------------------
+
+27. Go to container - IAM - Add Role Assignment (Storage Blob Contributor) Role - Select the App previously registered
+28. Debug and check if the connection works by inserting this code:
+
+%fs
+ls "/folder_path/"
+
+29. Create more code to read CSV files into the Notebook. This will create Spark Jobs
+
+------------------------------------------------------------------------------------------------------------
+30. Create Azure Synapse Analytics
+
 
 
