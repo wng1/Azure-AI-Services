@@ -1,0 +1,48 @@
+Pre-requisities
+1) #To use Apache Spark, you need to have Java 8 or later installed. Also, you need Python 3 recommended.
+java -version
+2) #Download https://spark.apache.org/downloads.html Apache Spark, and extract the folder to somewhere in your system
+tar -zxvf spark-3.x.x-bin-hadoop2.x.tgz
+3) #Navigate to the folder of the Apache Spark
+cd spark-3.x.x-bin-hadoop2.x
+cp conf/spark-env.sh.template conf/spark-env.sh
+
+Edit the spark-env.sh file to configure environment variables as needed. You might see the JAVA_HOME variable to your Java installation path.
+
+4) #Start a Spark Master and Worker
+sbin/start-master.sh
+sbin/start-worker.sh <master-url>
+
+master-url can be:   spark://localhost7077
+
+5) Open the browser via URL: http://localhost:8080
+6) You can use Spark Streaming. (DStream, Micro-Batch Processing, Windows Operations, Input Sources, Output Operations, Fault Tolerance, Integration with Spark)
+
+pip install pyspark
+
+from pyspark import SparkContext
+from pyspark.streaming import StreamingContext
+from pyspark.streaming.kafka import KafkaUtils
+#Create SparkContext and StreamingContext
+sc = SparkContext("local[*]", "ServerMonitoringApp")
+ssc = StreamingContext(sc, 1) # 1-second batch interval
+
+#Define Input Source
+
+kafkaParams = {"bootstrap.servers": "localhost:9092"}
+topics = ["server_metrics"]
+
+kafkaStream = KafkaUtils.createDirectStream(ssc, topics, kafkaParams)
+
+#Process and Analyse Data
+
+def process_server_metrics(rdd):
+
+kafkaStream.foreachRDD(process_server_metrics)
+
+======
+Logic
+======
+
+ssc.start()
+ssc.awaitTermination()
