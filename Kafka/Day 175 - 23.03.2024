@@ -1,0 +1,13 @@
+100,000 Orders placed per today.
+Storing into Postgres DB
+Kafka Producer to read each row 1 by 1 from Postgres DB
+Send Data to "Order Topic"
+===============================================================
+Flink Consumer, consume each data from "Order Topic"
+Then Tumbling Window (for 5 seconds),
+Aggregate sum of cost of the orders based on category
+===============================================================
+Apache Kafka to facilitate the real-time piepline and streamign applications
+Apach Flink: A distributed stream processing framework that enables powerful analytics and event-driven applications
+Postgres - A powerful open-source relational DMS
+===============================================================
