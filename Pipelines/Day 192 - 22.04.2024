@@ -1,0 +1,7 @@
+Review
+
+• Data Integration: Gather data from various departments and tools, integrating it into a central data lake or warehouse.
+• Data Pipeline Dev: Design and construct data pipelines to automate data flow, involving ETL processes as needed.
+• DQ and Reliability: Implement systems to monitor and ensure data quality, making it clean, consistent, and usable.
+• Report Generation and automation: Develop processes for automatic report generation and distribution to stakeholders.
+• Collaboration: Work closely with business owners, data analysts, and other stakeholders to understand their needs and ensure the data infrastructure supports business requirements.
